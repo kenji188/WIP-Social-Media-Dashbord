@@ -1,0 +1,243 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(232, 255, 213, 0.1);
+}
+
+.header__title h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.header__subtitle {
+    display: block;
+    font-size: 16px;
+    color: hsl(228, 45%, 44%);
+}
+
+.header__toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header__toggle input[type="radio"] {
+    display: none;
+}
+
+/* Toggle Switch Styles */
+.toggle__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 60px;
+    height: 28px;
+    background: #ddd;
+    border-radius: 15px;
+    margin-left: 10px;
+    border: none; /* Ensure no border */
+    outline: none; /* Ensure no outline */
+}
+
+.toggle__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsl(230, 22%, 74%);
+    border-radius: 15px;
+    transition: background 0.3s;
+}
+
+.toggle__button {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    border: none; /* Ensure no border */
+    outline: none; /* Ensure no outline */
+}
+
+.toggle__button:after{
+    position: relative;
+    top: 4px;
+    left: 24px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    border: none; /* Ensure no border */
+    outline: none; /* Ensure no outline */
+}
+
+input#dark:checked ~ .toggle__wrapper .toggle__background {
+    background: hsl(230, 22%, 74%);
+}
+
+input#dark:checked ~ .toggle__wrapper .toggle__button {
+    left: 10px;
+    transform: translateX(-100%);
+}
+
+/* Card Styles */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.card__platform {
+    display: flex;
+    align-items: center;
+}
+
+.card__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.card__username {
+    font-weight: 700;
+}
+
+.card__followers {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.card__count {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.card__label {
+    color: hsl(228, 45%, 44%);
+}
+
+.card__change {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.card__change--up {
+    color: green;
+}
+
+.card__change--down {
+    color: red;
+}
+
+.card__number {
+    margin-left: 5px;
+}
+
+/* Overview Card Styles */
+.card-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-grid img {
+    width: 24px;
+    height: 24px;
+}
+
+.card-grid .card__subtitle {
+    font-weight: 700;
+}
+
+.card-grid .card__count {
+    font-size: 24px;
+}
+
+.card-grid .card__change {
+    display: flex;
+    align-items: center;
+}
+
+/* Attribution Styles */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 10px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+body.dark-mode .header {
+    background-color: #444;
+}
+
+body.dark-mode .card {
+    background: #ffffff;
+    color: #f9f9f9;
+}
+
+body.dark-mode .card__change--up {
+    color: lightgreen;
+}
+
+body.dark-mode .card__change--down {
+    color: lightcoral;
+}
